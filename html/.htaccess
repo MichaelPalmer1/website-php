@@ -33,6 +33,11 @@ ErrorDocument 404 /404.php
 	RewriteRule ^soon\.php$ - [L,NC,R=404]
 	RewriteRule ^sap\.php$ - [L,NC,R=404]
 
+	# Forbidden files
+	<FilesMatch "composer\.(json|lock)$">
+	    RewriteRule .* - [R=404,L]
+	</FilesMatch>
+
 	## Spiders
 	RewriteCond %{HTTP_USER_AGENT} ^atSpider/1.0 [OR]
 	RewriteCond %{HTTP_USER_AGENT} ^autoemailspider [OR]

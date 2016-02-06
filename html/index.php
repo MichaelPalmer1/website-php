@@ -1,4 +1,5 @@
 <?php
+	require_once 'init.php';
     include_once 'classes/header.php';
 	require_once '../recaptchalib.php';
 	$publickey = "6LfcWfkSAAAAAGWh7U8dWppVsdPtB5O1XwuwOwIM";
