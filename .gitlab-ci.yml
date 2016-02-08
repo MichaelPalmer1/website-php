@@ -3,7 +3,7 @@ list_files:
 #    - laravel
   script:
     - pwd
-    - ll
+    - ls -l
 
 #deploy_files:
 #  stage: deploy
