@@ -11,7 +11,9 @@ install_composer:
 
 perform_tests:
   stage: test
-  script: phpunit --coverage-text
+  script:
+    - cd website/
+    - phpunit --coverage-text
 
 deploy_files:
   stage: deploy
