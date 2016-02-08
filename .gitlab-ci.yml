@@ -13,10 +13,9 @@ perform_tests:
 deploy_files:
   stage: deploy
   script:
-    - pwd
-#    - php /var/www/website/artisan down
-#    - cp -r website/ /var/www
-#    - cd /var/www/website
-#    - composer update
-#    - chgrp -R www-data .
-#    - php artisan up
+    - php /var/www/website/artisan down
+    - cp -r . /var/www/website
+    - cd /var/www/website
+    - composer update
+    - chgrp -R www-data .
+    - php artisan up
