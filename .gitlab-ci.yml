@@ -14,8 +14,9 @@ deploy_files:
   stage: deploy
   script:
     - php /var/www/website/artisan down
-    - sudo -A cp -r . /var/www/website
+    - export SUDO_ASKPASS
+    - sudo -S cp -r . /var/www/website
     - cd /var/www/website
     - composer update
     - php artisan up
-    - sudo -A chown -R www-data:www-data /var/www/website
+    - sudo -S chown -R www-data:www-data /var/www/website
