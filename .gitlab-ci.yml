@@ -14,7 +14,7 @@ deploy_files:
   stage: deploy
   script:
     - php /var/www/website/artisan down
-    - echo $RUNNER_PW | sudo cp -r . /var/www/website
+    - sudo cp -r . /var/www/website
     - cd /var/www/website
     - composer update
     - php artisan up
