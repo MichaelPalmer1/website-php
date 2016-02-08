@@ -8,7 +8,7 @@ before_script:
 
 perform_tests:
   stage: test
-  script: phpunit --coverage-text
+  script: phpunit --coverage-text --colors=never
 
 deploy_files:
   stage: deploy
