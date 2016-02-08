@@ -1,0 +1,14 @@
+list_files:
+#  only:
+#    - laravel
+  script:
+    - pwd
+    - ll
+
+#deploy_files:
+#  stage: deploy
+#  only:
+#    - laravel
+#  script:
+#    - cp -R * /var/www/website/*
+#    - chgrp -R www-data /var/www/website
