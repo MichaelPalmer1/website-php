@@ -1,12 +1,19 @@
-before_script:
-  - echo $CI_PROJECT_DIR
-  - BUILD_DIR = `pwd`
+install_composer:
+  type: build
+  script:
+    - cd website/
+    - composer install
+
+perform_tests:
+  type: test
+  script: phpunit --coverage-text
 
 deploy_files:
   type: deploy
   script:
-    - echo $BUILD_DIR
-#    - cp -r website /var/www
-#    - chgrp -R www-data /var/www/website/*
-#    - cd /var/www/website
-#    - composer install
+    - php /var/www/website/artisan down
+    - cp -r . /var/www
+    - cd /var/www/website
+    - composer update
+    - chgrp -R www-data .
+    - php artisan up
