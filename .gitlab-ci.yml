@@ -12,6 +12,7 @@ perform_tests:
 
 deploy_files:
   stage: deploy
+  only: laravel
   script:
     - php /var/www/website/artisan down
     - echo $RUNNER_PW | sudo -S cp -r . /var/www/website
