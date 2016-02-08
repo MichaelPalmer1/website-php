@@ -1,14 +1,12 @@
-list_files:
-#  only:
-#    - laravel
-  script:
-    - pwd
-    - ls -l
+before_script:
+  - echo $CI_PROJECT_DIR
+  - BUILD_DIR = `pwd`
 
-#deploy_files:
-#  stage: deploy
-#  only:
-#    - laravel
-#  script:
-#    - cp -R * /var/www/website/*
-#    - chgrp -R www-data /var/www/website
+deploy_files:
+  type: deploy
+  script:
+    - echo $BUILD_DIR
+#    - cp -r website /var/www
+#    - chgrp -R www-data /var/www/website/*
+#    - cd /var/www/website
+#    - composer install
