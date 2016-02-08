@@ -3,6 +3,9 @@
 @section('content')
 
 <div class="panel-body">
+
+    <h3 class="page-header">Tasks</h3>
+
     <!-- New Task Form -->
     <form action="{{ url('test') }}" method="POST" class="form-horizontal">
         {!! csrf_field() !!}
