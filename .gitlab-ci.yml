@@ -1,19 +1,14 @@
 stages:
-  - build
   - test
   - deploy
 
-install_composer:
-  stage: build
-  script:
-    - cd website/
-    - composer install
+before_script:
+  - cd website/
+  - composer install
 
 perform_tests:
   stage: test
-  script:
-    - cd website/
-    - phpunit --coverage-text
+  script: phpunit --coverage-text
 
 deploy_files:
   stage: deploy
