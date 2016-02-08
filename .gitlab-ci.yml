@@ -17,5 +17,5 @@ deploy_files:
     - cp -r . /var/www/website
     - cd /var/www/website
     - composer update
-    - chgrp -R www-data .
     - php artisan up
+    - echo $RUNNER_PW | sudo chown -R www-data:www-data /var/www/website
