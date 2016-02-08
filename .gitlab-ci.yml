@@ -1,15 +1,20 @@
+stages:
+  - build
+  - test
+  - deploy
+
 install_composer:
-  type: build
+  stage: build
   script:
     - cd website/
     - composer install
 
 perform_tests:
-  type: test
+  stage: test
   script: phpunit --coverage-text
 
 deploy_files:
-  type: deploy
+  stage: deploy
   script:
     - php /var/www/website/artisan down
     - cp -r . /var/www
