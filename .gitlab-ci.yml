@@ -1,0 +1,23 @@
+stages:
+  - test
+  - deploy
+
+before_script:
+  - cd website/
+  - composer install
+
+perform_tests:
+  stage: test
+  script: phpunit --coverage-text --colors=never
+
+deploy_files:
+  stage: deploy
+  only:
+    - laravel@michael/Website
+  script:
+    - php /var/www/website/artisan down
+    - echo $RUNNER_PW | sudo -S cp -r . /var/www/website
+    - cd /var/www/website
+    - composer update
+    - php artisan up
+    - sudo -S chown -R www-data:www-data /var/www/website
