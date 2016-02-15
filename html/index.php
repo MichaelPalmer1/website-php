@@ -247,7 +247,8 @@ function curl_get_contents($url) {
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <?php /*
+                            <?php
+                            /*
                             <ul class="portfolio-filters text-center">
                                 <li class="filter active" data-filter="all">All</li>
                                 <li class="filter" data-filter="design">Design</li>
@@ -255,7 +256,8 @@ function curl_get_contents($url) {
                                 <li class="filter" data-filter="project">Project Management</li>
                                 <li class="filter" data-filter="leader">Leadership</li>
                             </ul><!--.portfolio-filter nav-->
-                            */ ?>
+                            */
+                            ?>
 
                             <div id="grid" class="row">
                                 <div class="mix col-md-4 col-sm-6 design dev project leader margin-btm-20">
