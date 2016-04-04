@@ -1,32 +1,5 @@
 stages:
-  - test
   - deploy
-
-test:
-  stage: test
-  except:
-    - master@michael/Website
-  tags:
-    - docker
-    - php5.6
-  image: php:5.6
-  script:
-    - cd html/
-    - apt-get update -y
-    - apt-get install -y git zip php5-xdebug
-    - php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php
-    - php composer-setup.php
-    - php -r "unlink('composer-setup.php');"
-    - php composer.phar require phpunit/phpunit
-    # - php composer.phar install
-    - export PATH="$CI_PROJECT_DIR/html/vendor/bin:$PATH"
-    - php5enmod xdebug
-    - echo "extension=/usr/lib/php5/20131226/xdebug.so" >> php.ini
-    - phpunit --coverage-text --colors
-#  artifacts:
-#    paths:
-#      - coverage-html
-#      - coverage-xml
 
 deploy:
   stage: deploy
