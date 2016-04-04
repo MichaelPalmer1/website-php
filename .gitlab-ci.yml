@@ -21,7 +21,7 @@ test:
     # - php composer.phar install
     - export PATH="$CI_PROJECT_DIR/html/vendor/bin:$PATH"
     - php5enmod xdebug
-    - echo "zend_extension=/usr/lib/php5/20131226/xdebug.so" >> php.ini
+    - echo "extension=/usr/lib/php5/20131226/xdebug.so" >> php.ini
     - phpunit --coverage-text --colors
 #  artifacts:
 #    paths:
