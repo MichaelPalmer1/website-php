@@ -19,7 +19,7 @@ test:
     - php composer-setup.php
     - php -r "unlink('composer-setup.php');"
     - php composer.phar install
-    - phpunit --coverage-text --colors .
+    - phpunit --coverage-text --colors
   artifacts:
     paths:
       - phpunit.xml
