@@ -12,7 +12,7 @@ test:
   image: php:5.6
   script:
     - curl https://phar.phpunit.de/phpunit-5.3.0.phar --output phpunit.phar
-    - php phpunit.phar --coverage-text --colors=never
+    - php phpunit.phar --coverage-text --colors=never .
   artifacts:
     paths:
       - phpunit.xml
