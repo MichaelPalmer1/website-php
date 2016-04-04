@@ -1,21 +1,14 @@
 stages:
-  - test
   - deploy
 
-before_script:
-  - cd html/
-  - composer install
-
-perform_tests:
-  stage: test
-  script: phpunit --coverage-text --colors=never
-
-deploy_files:
+deploy:
   stage: deploy
   only:
     - master@michael/Website
+  tags:
+    - web
   script:
-    - echo $RUNNER_PW | sudo -S cp -r . /var/www/html
-    - cd /var/www/html
-    - composer update
-    - sudo -S chown -R www-data:www-data /var/www/html
+    - docker build -t michaelpalmer/web .
+    - if [ ! -z "$(docker ps | grep web)" ]; then docker stop web; fi
+    - if [ ! -z "$(docker ps -a | grep web)" ]; then docker rm web; fi
+    - docker run -d -e VIRTUAL_HOST=michaeldpalmer.com --name web --restart always michaelpalmer/web
