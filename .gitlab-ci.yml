@@ -8,7 +8,8 @@ deploy:
   tags:
     - web
   script:
-    - docker build -t michaelpalmer/web .
-    - if [ ! -z "$(docker ps | grep web)" ]; then docker stop web; fi
-    - if [ ! -z "$(docker ps -a | grep web)" ]; then docker rm web; fi
-    - docker run -d -e VIRTUAL_HOST=michaeldpalmer.com --name web --restart always michaelpalmer/web
+    - docker build -t michaelpalmer/dockers:web .
+    - docker push michaelpalmer/dockers:web
+    - rancher-compose logs
+#    - rancher-compose upgrade
+#    - docker run -d -e VIRTUAL_HOST=michaeldpalmer.com --name web --restart always michaelpalmer/web
