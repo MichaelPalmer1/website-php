@@ -11,5 +11,5 @@ deploy:
     - docker build -t michaelpalmer/dockers:web .
     - docker push michaelpalmer/dockers:web
     - rancher-compose logs
-#    - rancher-compose upgrade
+#    - rancher-compose upgrade web
 #    - docker run -d -e VIRTUAL_HOST=michaeldpalmer.com --name web --restart always michaelpalmer/web
