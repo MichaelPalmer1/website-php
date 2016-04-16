@@ -10,5 +10,4 @@ deploy:
   script:
     - docker build -t michaelpalmer/dockers:web .
     - docker push michaelpalmer/dockers:web
-    - rancher-compose up --upgrade web
-#    - docker run -d -e VIRTUAL_HOST=michaeldpalmer.com --name web --restart always michaelpalmer/web
+    - rancher-compose up -d -p --upgrade web
