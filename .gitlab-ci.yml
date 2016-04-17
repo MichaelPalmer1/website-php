@@ -10,4 +10,4 @@ deploy:
   script:
     - docker build -t michaelpalmer/dockers:web .
     - docker push michaelpalmer/dockers:web
-    - rancher-compose up -d -p --upgrade web
+    - rancher-compose --project-name Website up -d -p --upgrade web
