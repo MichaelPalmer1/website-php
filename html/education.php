@@ -1,7 +1,6 @@
 <?php
 include_once 'classes/header.php';
-$credits = 92; // End Fall 2015 [3 semesters left]
-//$credits = 105; // End Spring 2016 [1 semester left]
+$credits = 105; // End Spring 2016 [1 semester left]
 //$credits = 118; // End Summer 2016 [Final semester]
 //$credits = 131; // End Spring 2017 [Degree completed]
 ?>
@@ -9,7 +8,8 @@ $credits = 92; // End Fall 2015 [3 semesters left]
 <html lang="en">
 	<head>
         <title>Education</title>
-        <meta name="keywords" content="education,gsu,georgia southern university,computer science,information systems,sap">
+        <meta name="keywords"
+              content="education,gsu,georgia southern university,computer science,information systems,sap">
         <?php echo $header ?>
     </head>
     <body data-spy="scroll" data-target="#navigation" data-offset="75">
@@ -17,7 +17,8 @@ $credits = 92; // End Fall 2015 [3 semesters left]
             <div class="navbar navbar-default navbar-static-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -62,23 +63,30 @@ $credits = 92; // End Fall 2015 [3 semesters left]
             					<span class="pull-right">
             						<span style="color:black;font-weight:bold">
             							<?php
-            								$semesters = round( (132 - $credits) / 15 );
-            								$isPlural = ($semesters > 1) ? "s" : "";
-            								echo ((132 - $credits) / 15 > 1) ? "$semesters semester$isPlural left" : (($credits != 132) ? "Currently enrolled in final semester" : "Degree Completed");
-            							?>
+                                        $semesters = round((132 - $credits) / 15);
+                                        $isPlural = ($semesters > 1) ? "s" : "";
+                                        echo ((132 - $credits) / 15 > 1) ? "$semesters semester$isPlural left" : (
+                                            ($credits != 132) ?
+                                                "Currently enrolled in final semester" : "Degree Completed");
+                                        ?>
             						</span>
             					</span>
             				</h3>
             				<div class="progress">
-            					<div class="progress-bar" style="width: <?php echo round(($credits / 132) * 100) ?>%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="<?php echo round(($credits / 132) * 100) ?>" role="progressbar">
+            					<div class="progress-bar" style="width: <?php echo round(($credits / 132) * 100) ?>%"
+                                     aria-valuemax="100" aria-valuemin="0"
+                                     aria-valuenow="<?php echo round(($credits / 132) * 100) ?>" role="progressbar">
             						<span class="pull-right">
-            							<span style="font-weight:bold;vertical-align:middle;position:relative;top:2px;right:3px;"><?php echo round(($credits / 132) * 100) ?>%</span>
+            							<span style="font-weight:bold;vertical-align:middle;position:relative;top:2px;right:3px;">
+                                            <?php echo round(($credits / 132) * 100) ?>%
+                                        </span>
             						</span>
             					</div>
             				</div>
 
             				<h5>Links:</h5>
-            				<a href="http://georgiasouthern.meritpages.com/Michael-Palmer/1149208" target="_blank" rel="nofollow">Georgia Southern MeritPages</a>
+            				<a href="http://georgiasouthern.meritpages.com/Michael-Palmer/1149208" target="_blank"
+                               rel="nofollow">Georgia Southern MeritPages</a>
 
             				<h5>Cumulative GPA:</h5>
             				3.67
@@ -96,18 +104,15 @@ $credits = 92; // End Fall 2015 [3 semesters left]
             				CBRE Global Investors 5-Star Worldwide Scholarship Award (Fall 2012)<br>
 
             				<h5>Major Courses To Date:</h5>
-            				Systems Software
-            				(<a href="http://em.georgiasouthern.edu/catalog/UndergraduateCatalog/7500.htm" target="_blank" rel="nofollow">CSCI 3232</a>)<br>
-            				Data Structures
-            				(<a href="http://em.georgiasouthern.edu/catalog/UndergraduateCatalog/7498.htm" target="_blank" rel="nofollow">CSCI 3230</a>)<br>
-            				Theoretical Foundations
-            				(<a href="http://em.georgiasouthern.edu/catalog/UndergraduateCatalog/7501.htm" target="_blank" rel="nofollow">CSCI 3236</a>)<br>
-            				Programming Principles II
-            				(<a href="http://em.georgiasouthern.edu/catalog/UndergraduateCatalog/7495.htm" target="_blank" rel="nofollow">CSCI 1302</a>)<br>
-            				Programming Principles I
-            				(<a href="http://em.georgiasouthern.edu/catalog/UndergraduateCatalog/7494.htm" target="_blank" rel="nofollow">CSCI 1301</a>)<br>
-            				Computers, Ethics, and Society
-            				(<a href="http://em.georgiasouthern.edu/catalog/UndergraduateCatalog/7496.htm" target="_blank" rel="nofollow">CSCI 2120</a>)<br>
+							Database Systems (CSCI 3432)<br>
+							Algorithm Design & Analysis (CSCI 5330)<br>
+							Object-Oriented Design (CSCI 5335)<br>
+            				Systems Software (CSCI 3232)<br>
+            				Data Structures (CSCI 3230)<br>
+            				Theoretical Foundations (CSCI 3236)<br>
+            				Programming Principles II (CSCI 1302)<br>
+            				Programming Principles I (CSCI 1301)<br>
+            				Computers, Ethics, and Society (CSCI 2120)<br>
 
             				<?php /*<h5>Currently Enrolled:</h5>
 
