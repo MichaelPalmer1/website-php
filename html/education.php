@@ -89,7 +89,7 @@ $credits = 105; // End Spring 2016 [1 semester left]
                                rel="nofollow">Georgia Southern MeritPages</a>
 
             				<h5>Cumulative GPA:</h5>
-            				3.67
+            				3.71
 
             				<h5>Classification:</h5>
             				Senior
@@ -99,8 +99,8 @@ $credits = 105; // End Spring 2016 [1 semester left]
 
             				<h5>Achievements:</h5>
             				Zell Miller Scholarship (Fall 2012 - Present)<br>
+							President's List (Fall 2013, Spring 2016)<br>
             				Dean's List (Fall 2012, Fall 2014, Spring 2015)<br>
-            				President's List (Fall 2013)<br>
             				CBRE Global Investors 5-Star Worldwide Scholarship Award (Fall 2012)<br>
 
             				<h5>Major Courses To Date:</h5>
