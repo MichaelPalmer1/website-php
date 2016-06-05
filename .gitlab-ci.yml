@@ -33,7 +33,6 @@ release-image:
 deploy:
   stage: deploy
   script:
-    - docker run --entrypoint /usr/local/bin/rancher-compose monostream/rancher-compose \
-    --project-name $RANCHER_PROJECT_NAME up -d -p --force-upgrade $RANCHER_SERVICE_NAME
+    - docker run --entrypoint /usr/local/bin/rancher-compose monostream/rancher-compose --project-name $RANCHER_PROJECT_NAME up -d -p --force-upgrade $RANCHER_SERVICE_NAME
   only:
     - master
