@@ -33,6 +33,12 @@ release-image:
 deploy:
   stage: deploy
   script:
-    - docker run --entrypoint /usr/local/bin/rancher-compose monostream/rancher-compose --project-name $RANCHER_PROJECT_NAME up -d -p --force-upgrade $RANCHER_SERVICE_NAME
+    - apt-get update -q
+    - apt-get install -y -q --no-install-recommends ca-certificates tar wget
+    - wget -O /tmp/rancher-compose-linux-amd64-${RANCHER_COMPOSE_VERSION}.tar.gz "https://github.com/rancher/rancher-compose/releases/download/${RANCHER_COMPOSE_VERSION}/rancher-compose-linux-amd64-${RANCHER_COMPOSE_VERSION}.tar.gz"
+    - tar -xf /tmp/rancher-compose-linux-amd64-${RANCHER_COMPOSE_VERSION}.tar.gz -C /tmp
+    - mv /tmp/rancher-compose-${RANCHER_COMPOSE_VERSION}/rancher-compose /usr/local/bin/rancher-compose
+    - chmod +x /usr/local/bin/rancher-compose
+    - rancher-compose --project-name $RANCHER_PROJECT_NAME up -d -p --force-upgrade $RANCHER_SERVICE_NAME
   only:
     - master
