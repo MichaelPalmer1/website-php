@@ -5,5 +5,5 @@ web:
     io.rancher.container.pull_image: always
     io.rancher.scheduler.affinity:host_label: host=aws
   tty: true
-  image: michaelpalmer/dockers:web
+  image: registry.michaeldpalmer.com/michael/website:latest
   stdin_open: true
